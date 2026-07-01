@@ -1,0 +1,240 @@
+{
+  "version": "1.1",
+  "track": "maemae",
+  "track_label": "매매 투자성향",
+  "code_prefix": "M-",
+  "axis_order": ["RISK", "HORIZON", "BASIS", "CAPITAL"],
+
+  "axes": [
+    {
+      "id": "RISK",
+      "label": "리스크 성향",
+      "pole_a": { "code": "S", "label": "안정형", "desc": "검증된 입지·실수요 탄탄한 물건, 빠지지 않는 자산 우선" },
+      "pole_b": { "code": "A", "label": "공격형", "desc": "저평가·개발호재 등 불확실하지만 상승여력 큰 자산 베팅" },
+      "default_pole": "S"
+    },
+    {
+      "id": "HORIZON",
+      "label": "투자 기간",
+      "pole_a": { "code": "H", "label": "장기보유형", "desc": "5년+ 보유, 복리·임대·비과세를 누림" },
+      "pole_b": { "code": "T", "label": "단기회전형", "desc": "2~3년 내 차익 실현, 자본 회전" },
+      "default_pole": "H"
+    },
+    {
+      "id": "BASIS",
+      "label": "투자 목적",
+      "pole_a": { "code": "R", "label": "실거주겸용형", "desc": "내 생활권·생활편의·학군이 의사결정에 개입" },
+      "pole_b": { "code": "P", "label": "순수투자형", "desc": "거주는 무관, 오직 수익률·세팅 용이성으로 판단" },
+      "default_pole": "R"
+    },
+    {
+      "id": "CAPITAL",
+      "label": "자금 운용",
+      "pole_a": { "code": "G", "label": "레버리지형", "desc": "주담대·갭(전세 레버리지) 적극, 수익 증폭" },
+      "pole_b": { "code": "E", "label": "자기자본형", "desc": "차입 최소화, 현금 비중 높게 보수적 운용" },
+      "default_pole": "G"
+    }
+  ],
+
+  "questions": [
+    {
+      "id": "q1",
+      "axis": "RISK",
+      "text": "관심 지역에 '재건축 추진위가 곧 꾸려진다'는 소문이 돕니다. 아직 확정된 건 없습니다. 당신은?",
+      "options": [
+        { "label": "확정 안 됐어도 소문 단계에 미리 들어간다", "score": { "A": 2 } },
+        { "label": "사업시행인가 같은 확정 신호가 나온 뒤 들어간다", "score": { "S": 2 } }
+      ]
+    },
+    {
+      "id": "q2",
+      "axis": "RISK",
+      "text": "같은 예산으로 고를 수 있는 두 물건이 있다면?",
+      "options": [
+        { "label": "누구나 아는 검증된 동네의 평범한 시세 물건", "score": { "S": 2 } },
+        { "label": "아직 저평가됐지만 개발 기대가 있는 동네 물건", "score": { "A": 2 } }
+      ]
+    },
+    {
+      "id": "q3",
+      "axis": "RISK",
+      "text": "매수 직후 하락장이 와서 한동안 못 오를 수도 있습니다. 당신의 마음은?",
+      "options": [
+        { "label": "기대수익이 크면 한동안 물려도 감수한다", "score": { "A": 2 } },
+        { "label": "빠지지 않고 버텨주는 자산이 우선이다", "score": { "S": 2 } }
+      ]
+    },
+    {
+      "id": "q4",
+      "axis": "RISK",
+      "text": "투자 결정에서 더 신경 쓰는 쪽은?",
+      "options": [
+        { "label": "손실 가능성을 최대한 줄이는 것", "score": { "S": 2 } },
+        { "label": "큰 상승 기회를 놓치지 않는 것", "score": { "A": 2 } }
+      ]
+    },
+
+    {
+      "id": "q5",
+      "axis": "HORIZON",
+      "text": "한 채를 사면 보통 얼마나 보유할 계획인가요?",
+      "options": [
+        { "label": "5년 이상, 길게 들고 간다", "score": { "H": 2 } },
+        { "label": "2~3년 안에 차익을 실현하고 싶다", "score": { "T": 2 } }
+      ]
+    },
+    {
+      "id": "q6",
+      "axis": "HORIZON",
+      "text": "산 집이 단기간에 기대만큼 올랐습니다. 어떻게 하나요?",
+      "options": [
+        { "label": "목표가에 닿으면 팔아 현금을 회전한다", "score": { "T": 2 } },
+        { "label": "더 오를 여지를 보고 계속 보유한다", "score": { "H": 2 } }
+      ]
+    },
+    {
+      "id": "q7",
+      "axis": "HORIZON",
+      "text": "비과세·장기보유특별공제 같은 장기 세제 혜택에 대해?",
+      "options": [
+        { "label": "요건을 채워 적극 활용할 생각이다", "score": { "H": 2 } },
+        { "label": "그보다 회전 속도와 타이밍이 더 중요하다", "score": { "T": 2 } }
+      ]
+    },
+    {
+      "id": "q8",
+      "axis": "HORIZON",
+      "text": "매도를 결심하는 기준에 더 가까운 것은?",
+      "options": [
+        { "label": "목표 가격에 닿았을 때 (가격 트리거)", "score": { "T": 2 } },
+        { "label": "충분히 보유했다 싶을 때 (시간·생애주기)", "score": { "H": 2 } }
+      ]
+    },
+
+    {
+      "id": "q9",
+      "axis": "BASIS",
+      "text": "수익률은 아주 좋은데, 내가 살 일은 평생 없을 동네의 물건입니다. 살까요?",
+      "options": [
+        { "label": "거주와 무관해도 수익만 좋으면 산다", "score": { "P": 2 } },
+        { "label": "내가 살 수 있는 곳이어야 마음이 편하다", "score": { "R": 2 } }
+      ]
+    },
+    {
+      "id": "q10",
+      "axis": "BASIS",
+      "text": "물건을 고를 때 학군·통근·생활편의의 비중은?",
+      "options": [
+        { "label": "내 생활조건이 중요한 판단 기준이다", "score": { "R": 2 } },
+        { "label": "임차수요만 받쳐주면 내 생활과는 무관하다", "score": { "P": 2 } }
+      ]
+    },
+    {
+      "id": "q11",
+      "axis": "BASIS",
+      "text": "앞으로의 보유 방향에 더 가까운 것은?",
+      "options": [
+        { "label": "좋은 한 채(실거주)를 잘 지키고 갈아타는 쪽", "score": { "R": 2 } },
+        { "label": "여러 채로 자산을 늘려가는 쪽", "score": { "P": 2 } }
+      ]
+    },
+    {
+      "id": "q12",
+      "axis": "BASIS",
+      "text": "산 집에 전월세를 놓아 임차인을 들이는 것에 대해?",
+      "options": [
+        { "label": "수익을 위해 당연히 임대 세팅한다", "score": { "P": 2 } },
+        { "label": "내가 들어가 사는 그림이 우선이라 거부감이 있다", "score": { "R": 2 } }
+      ]
+    },
+
+    {
+      "id": "q13",
+      "axis": "CAPITAL",
+      "text": "쓸 수 있는 현금이 어느 정도 있을 때, 당신의 선택은?",
+      "options": [
+        { "label": "현금을 다 쓰지 않고 레버리지로 두 채 간다", "score": { "G": 2 } },
+        { "label": "차입을 줄이고 한 채를 안전하게 산다", "score": { "E": 2 } }
+      ]
+    },
+    {
+      "id": "q14",
+      "axis": "CAPITAL",
+      "text": "전세를 끼고 매수하는 갭투자에 대해?",
+      "options": [
+        { "label": "자기자본을 아껴주는 좋은 수단이라 적극 쓴다", "score": { "G": 2 } },
+        { "label": "역전세가 부담돼 가급적 피한다", "score": { "E": 2 } }
+      ]
+    },
+    {
+      "id": "q15",
+      "axis": "CAPITAL",
+      "text": "'기준금리 인상' 뉴스를 보면 드는 생각은?",
+      "options": [
+        { "label": "대출 비중이 커서 신경이 많이 쓰인다", "score": { "G": 2 } },
+        { "label": "빚이 적어 별로 흔들리지 않는다", "score": { "E": 2 } }
+      ]
+    },
+    {
+      "id": "q16",
+      "axis": "CAPITAL",
+      "text": "감당 가능한 대출 수준에 더 가까운 것은?",
+      "options": [
+        { "label": "LTV·DSR 한도를 적극 끌어 쓴다", "score": { "G": 2 } },
+        { "label": "보수적으로, 현금 비중을 높게 가져간다", "score": { "E": 2 } }
+      ]
+    }
+  ],
+
+  "profile_inputs": [
+    {
+      "id": "ownership",
+      "label": "주택보유상황",
+      "text": "현재 주택 보유 상황은? (대출·세금 규제 판정용, 유형 점수에는 영향 없음)",
+      "options": [
+        { "label": "무주택", "value": "none" },
+        { "label": "1주택", "value": "one" },
+        { "label": "다주택", "value": "multi" }
+      ]
+    },
+    {
+      "id": "region_regulated",
+      "label": "규제지역 여부",
+      "text": "매수하려는 지역이 규제지역(조정대상지역·투기과열지구·토지거래허가구역)인가요? (대출·세금 규제 판정용, 유형 점수에는 영향 없음)",
+      "options": [
+        { "label": "규제지역 (서울 전역·경기 일부·신규 지정지 등)", "value": "regulated" },
+        { "label": "비규제지역", "value": "normal" },
+        { "label": "잘 모르겠다", "value": "unknown" }
+      ]
+    }
+  ],
+
+  "flags": [
+    { "when": { "ownership": "none", "region_regulated": "regulated" }, "level": "info", "message": "규제지역 무주택 주택구입 주담대는 LTV 40% 수준 + 6개월 내 전입(실거주) 의무가 적용됩니다(생애최초는 LTV 70%로 우대). 모든 차주에 DSR 40%도 함께 걸리니 소득 기준 한도를 미리 확인하세요." },
+    { "when": { "ownership": "one", "region_regulated": "regulated" }, "level": "warn", "message": "1주택자가 규제지역 주택을 추가 구입할 때 기존 주택을 처분하지 않으면 주담대가 전면 금지(LTV 0%)될 수 있습니다. 6개월 내 처분 약정(처분조건부)이면 완화되지만 적용 LTV(40%/50% 여부)는 출처상 표현이 갈려 금융기관에 직접 확인이 필요합니다." },
+    { "when": { "ownership": "multi", "region_regulated": "regulated" }, "level": "danger", "message": "다주택자가 규제지역 주택을 추가 구입하면 주담대가 전면 금지(LTV 0%)됩니다. 사실상 전액 자기자본이 필요하니 자금계획을 원점에서 재검토하세요." },
+    { "when": { "ownership": "multi", "region_regulated": "regulated" }, "level": "warn", "message": "다주택자가 조정대상지역 주택을 취득하면 취득세가 8~12%로 중과되고, 향후 양도 시 양도세 +20~30%p 중과 대상이 될 수 있습니다. 단 다주택 양도세 중과 한시배제(~2026-05-09)의 종료/연장 여부는 시점 확인이 필요하니 세무사와 세후 수익률을 다시 계산하세요." },
+    { "when": { "region_regulated": "regulated" }, "level": "warn", "message": "규제지역(조정+투기과열+토지거래허가) 일반매매는 2년 실거주 의무·갭투자(전세 끼고 매수) 차단·자금조달계획서 의무가 적용됩니다. 전세 레버리지나 임대 세팅 계획이 막힐 수 있으니 매수 전략을 확인하세요." },
+    { "when": { "axis_CAPITAL": "G", "region_regulated": "regulated" }, "level": "info", "message": "레버리지를 선호하는 성향인데 규제지역은 LTV 40%·주담대 한도 최대 6억(15억 초과 4억/25억 초과 2억)·DSR 40%로 차입이 크게 제한됩니다. 기대했던 레버리지가 안 나올 수 있으니 자금계획을 보수적으로 점검하세요." },
+    { "when": { "region_regulated": "unknown" }, "level": "info", "message": "대상 지역의 규제 여부에 따라 대출 한도·세금·실거주 의무가 크게 달라집니다. 국토부 「조정대상지역 및 투기과열지구 지정」 페이지에서 규제지역 여부를 먼저 확인하세요." }
+  ],
+
+  "types": [
+    { "code": "M-SHRG", "axes": { "RISK": "S", "HORIZON": "H", "BASIS": "R", "CAPITAL": "G" }, "name": "내집마련 안착러", "keywords": ["안정", "장기보유", "실거주겸용", "레버리지"], "summary": "좋은 입지 실거주 한 채를 대출 끼고 장기 보유하며 우상향을 노림" },
+    { "code": "M-SHRE", "axes": { "RISK": "S", "HORIZON": "H", "BASIS": "R", "CAPITAL": "E" }, "name": "현금 실속 거주형", "keywords": ["안정", "장기보유", "실거주겸용", "자기자본"], "summary": "빚 없이 우량 실거주 한 채, 마음 편한 장기 보유" },
+    { "code": "M-SHPG", "axes": { "RISK": "S", "HORIZON": "H", "BASIS": "P", "CAPITAL": "G" }, "name": "우량지 갭 장기러", "keywords": ["안정", "장기보유", "순수투자", "레버리지"], "summary": "검증된 입지에 전세 레버리지로 묻어두는 장기 투자" },
+    { "code": "M-SHPE", "axes": { "RISK": "S", "HORIZON": "H", "BASIS": "P", "CAPITAL": "E" }, "name": "거북이 실속 투자자", "keywords": ["안정", "장기보유", "순수투자", "자기자본"], "summary": "자기자본으로 우량 물건 장기 보유, 느리지만 단단함" },
+    { "code": "M-STRG", "axes": { "RISK": "S", "HORIZON": "T", "BASIS": "R", "CAPITAL": "G" }, "name": "갈아타기 실거주자", "keywords": ["안정", "단기회전", "실거주겸용", "레버리지"], "summary": "실거주하며 비과세 타이밍에 안전하게 상급지로 환승(레버리지)" },
+    { "code": "M-STRE", "axes": { "RISK": "S", "HORIZON": "T", "BASIS": "R", "CAPITAL": "E" }, "name": "신중한 환승러", "keywords": ["안정", "단기회전", "실거주겸용", "자기자본"], "summary": "빚 최소화하며 보수적으로 실거주 갈아타기" },
+    { "code": "M-STPG", "axes": { "RISK": "S", "HORIZON": "T", "BASIS": "P", "CAPITAL": "G" }, "name": "안전 단타 갭러", "keywords": ["안정", "단기회전", "순수투자", "레버리지"], "summary": "검증된 물건만 전세 레버리지로 단기 회전" },
+    { "code": "M-STPE", "axes": { "RISK": "S", "HORIZON": "T", "BASIS": "P", "CAPITAL": "E" }, "name": "몸사리는 차익러", "keywords": ["안정", "단기회전", "순수투자", "자기자본"], "summary": "자기자본으로 안전 물건만 짧게 차익", "rare": true },
+    { "code": "M-AHRG", "axes": { "RISK": "A", "HORIZON": "H", "BASIS": "R", "CAPITAL": "G" }, "name": "호재 베팅 실거주자", "keywords": ["공격", "장기보유", "실거주겸용", "레버리지"], "summary": "개발 기대 지역에 실거주하며 대출 끼고 장기 시세차익 노림" },
+    { "code": "M-AHRE", "axes": { "RISK": "A", "HORIZON": "H", "BASIS": "R", "CAPITAL": "E" }, "name": "뚝심 실거주 베터", "keywords": ["공격", "장기보유", "실거주겸용", "자기자본"], "summary": "현금으로 저평가 실거주지를 장기 베팅" },
+    { "code": "M-AHPG", "axes": { "RISK": "A", "HORIZON": "H", "BASIS": "P", "CAPITAL": "G" }, "name": "개발호재 장기 베터", "keywords": ["공격", "장기보유", "순수투자", "레버리지"], "summary": "재건축·정비사업 기대 저평가지에 레버리지로 장기 투자" },
+    { "code": "M-AHPE", "axes": { "RISK": "A", "HORIZON": "H", "BASIS": "P", "CAPITAL": "E" }, "name": "저평가 장기 사냥꾼", "keywords": ["공격", "장기보유", "순수투자", "자기자본"], "summary": "자기자본으로 저평가 물건을 인내하며 장기 보유(역발상)" },
+    { "code": "M-ATRG", "axes": { "RISK": "A", "HORIZON": "T", "BASIS": "R", "CAPITAL": "G" }, "name": "공격 갈아타기러", "keywords": ["공격", "단기회전", "실거주겸용", "레버리지"], "summary": "호재 지역으로 실거주를 빠르게 환승, 레버리지 활용" },
+    { "code": "M-ATRE", "axes": { "RISK": "A", "HORIZON": "T", "BASIS": "R", "CAPITAL": "E" }, "name": "현금 환승 베터", "keywords": ["공격", "단기회전", "실거주겸용", "자기자본"], "summary": "현금으로 공격적 실거주 단기 환승", "rare": true },
+    { "code": "M-ATPG", "axes": { "RISK": "A", "HORIZON": "T", "BASIS": "P", "CAPITAL": "G" }, "name": "고위험 회전 트레이더", "keywords": ["공격", "단기회전", "순수투자", "레버리지"], "summary": "저평가·호재 물건을 풀레버리지로 단기 회전(최고 위험·수익)" },
+    { "code": "M-ATPE", "axes": { "RISK": "A", "HORIZON": "T", "BASIS": "P", "CAPITAL": "E" }, "name": "현금 단타 사냥꾼", "keywords": ["공격", "단기회전", "순수투자", "자기자본"], "summary": "자기자본으로 저평가 물건을 짧게 차익", "rare": true }
+  ]
+}
