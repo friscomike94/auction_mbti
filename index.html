@@ -272,7 +272,7 @@ footer{ padding:26px 0 40px; text-align:center; font-size:.82rem; color:var(--mu
     <div class="bar"><span id="q-bar"></span></div>
     <div id="q-body"></div>
     <div class="nav-row">
-      <button class="btn btn-ghost" id="prev-btn">← 이전</button>
+      <button class="btn btn-ghost" id="prev-btn">← 뒤로</button>
       <button class="btn btn-primary" id="next-btn" disabled>다음 →</button>
     </div>
   </div>
@@ -446,9 +446,11 @@ function renderStep(){
       const idx=+btn.dataset.idx;
       const opt=Object.assign({__i:idx}, it.options[idx]);
       if(isProfile) state.profile[it.id]=opt; else state.answers[it.id]=opt;
-      body.querySelectorAll('.opt').forEach(b=>b.classList.remove('sel'));
+      body.querySelectorAll('.opt').forEach(b=>{ b.classList.remove('sel'); b.style.pointerEvents='none'; });
       btn.classList.add('sel');
       $('next-btn').disabled=false;
+      clearTimeout(state._advTimer);
+      state._advTimer=setTimeout(advanceStep, 260);
     };
   });
   $('prev-btn').style.visibility = state.stepIndex===0 ? 'hidden':'visible';
@@ -457,11 +459,13 @@ function renderStep(){
   $('next-btn').disabled = !selected;
 }
 function axisLabel(data,axisId){ const a=data.axes.find(x=>x.id===axisId); return a?a.label:axisId; }
-$('prev-btn').onclick=()=>{ if(state.stepIndex>0){ state.stepIndex--; renderStep(); } };
-$('next-btn').onclick=()=>{
+function advanceStep(){
+  clearTimeout(state._advTimer);
   if(state.stepIndex<state.steps.length-1){ state.stepIndex++; renderStep(); $('q-bar').style.width=((state.stepIndex/state.steps.length)*100)+'%'; }
   else finishQuiz();
-};
+}
+$('prev-btn').onclick=()=>{ clearTimeout(state._advTimer); if(state.stepIndex>0){ state.stepIndex--; renderStep(); $('q-bar').style.width=((state.stepIndex/state.steps.length)*100)+'%'; } };
+$('next-btn').onclick=advanceStep;
 function finishQuiz(){
   const data=DATA[state.track];
   const profileAns={};
