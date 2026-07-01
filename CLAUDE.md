@@ -16,3 +16,4 @@
 | 2026-07-01 | 규제 반영 (6·27/9·7/10·15/6·30, 보유주택수·규제지역 경고) | 00_regulations.md(신규), 02_*.json v1.1, 03_strategy_guide.md, html, skills 3종 | 보유주택수·대출제한·규제지역 제약 반영 요청 |
 | 2026-07-01 | 6·30 관보 원문 확정 반영 | 00_regulations.md, 03_strategy_guide.md, html | 사용자 제공 공고 원문(국토부 882/883, 경기도 1792호)으로 검증 |
 | 2026-07-01 | 경매 검색기준 생성 기능 추가 (유형+입력→검색조건, 결과화면+JSON) | agents/search-criteria-mapper(신규), skills/auction-search-criteria(신규), 04_search_criteria.*, html | 진단 결과로 경매물건 검색 활용 요청 |
+| 2026-07-01 | 배포 흐름 추가 (index.html 동기화→커밋·푸시), GitHub Pages 공개 | skills/publish-site(신규), README.md, index.html | GitHub 공개 + 재빌드 후 사이트 동기화 요청 |
