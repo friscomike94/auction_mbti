@@ -31,8 +31,8 @@
 
 ## 3. 타이포그래피
 
-- 제목/라벨: Space Grotesk (한글은 Noto Sans KR fallback)
-- 본문: Noto Sans KR
+- 제목/라벨: Gilroy (없으면 Pretendard fallback)
+- 본문: Pretendard
 - 제목 weight 700, letter spacing -4~-5%
 - 본문 weight 500-600, line height 1.65-1.8
 
